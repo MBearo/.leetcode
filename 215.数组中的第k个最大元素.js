@@ -26,7 +26,8 @@ function quick(nums, left, right, k) {
     }
   }
 }
-function partition(nums, left, right) {
+// 指针都从左开始
+function partition2(nums, left, right) {
   let pivot = nums[left];
   let i = left;
   for (let j = left + 1; j <= right; j++) {
@@ -40,6 +41,27 @@ function partition(nums, left, right) {
   swap(nums, i, left);
   // 交换以后 [left, i - 1] < pivot, nums[i] = pivot, [i + 1, right] >= pivot
   return i;
+}
+// 指针从左右两侧开始
+function partition(nums, left, right) {
+  const pivot = nums[left]
+  let i = left + 1
+  let j = right
+  while (i <= j) {
+    while (nums[i] < pivot) {
+      i++
+    }
+    while (nums[j] > pivot) {
+      j--
+    }
+    if (i <= j) {
+      swap(nums, i, j)
+      i++
+      j--
+    }
+  }
+  swap(nums, j, left)
+  return j
 }
 function swap(array, a, b) {
   /* const temp = array[a];
