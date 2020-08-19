@@ -13,6 +13,7 @@
 // 我悟了，忘记是已经排序后的数据了
 var threeSum = function (nums) {
   if (nums.length < 3) return [];
+  // sort是会改变原数组的，所以这么写，脱裤子放屁
   const array = nums.sort((a, b) => a - b)
   const result = []
   for (let i = 0; i < array.length - 2; i++) {
