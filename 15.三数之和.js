@@ -9,11 +9,15 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+// 这三个去重是抄的
+// 我悟了，忘记是已经排序后的数据了
 var threeSum = function (nums) {
+  if (nums.length < 3) return [];
   const array = nums.sort((a, b) => a - b)
   const result = []
   for (let i = 0; i < array.length - 2; i++) {
     const element = array[i];
+    if (i > 0 && nums[i] === nums[i - 1]) continue; // 去重
     let m = i + 1
     let n = array.length - 1
     while (m < n) {
@@ -24,6 +28,8 @@ var threeSum = function (nums) {
         n--
       } else {
         result.push([element, array[m], array[n]])
+        while (m < n && nums[m] === nums[m + 1]) m++; // 去重
+        while (m < n && nums[n] === nums[n - 1]) n--; // 去重
         m++
         n--
       }
