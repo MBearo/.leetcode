@@ -12,6 +12,7 @@
  * @param {number[]} D
  * @return {number}
  */
+// 这个时间复杂度在O(N2)
 var fourSumCount = function (A, B, C, D) {
   const map = new Map()
   A.forEach(a => {
