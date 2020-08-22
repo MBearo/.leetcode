@@ -10,16 +10,18 @@
  * @return {string[][]}
  */
 var groupAnagrams = function (strs) {
-  const map = new Map()
+  const hash = new Map()
   strs.forEach(str => {
-    const sortedStr = str.split('').sort((a, b) => a.codePointAt() - b.codePointAt()).join('')
-    if (map.get(sortedStr)) {
-      map.set(sortedStr, [...map.get(sortedStr), str])
+    // sort 默认就是从小到大
+    const sortedStr = str.split('').sort().join('')
+    if (hash.get(sortedStr)) {
+      hash.set(sortedStr, [...hash.get(sortedStr), str])
     } else {
-      map.set(sortedStr, [str])
+      hash.set(sortedStr, [str])
     }
   })
-  return [...map.values(values => values)]
+  // values直接用就行
+  return [...hash.values()]
 };
 // @lc code=end
 
