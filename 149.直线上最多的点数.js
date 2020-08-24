@@ -9,6 +9,8 @@
  * @param {number[][]} points
  * @return {number}
  */
+// 斜率计算需要注意
+// 会用重复点，以及空的情况
 var maxPoints = function (points) {
   if (points.length === 1) return 1
   let result = 0
