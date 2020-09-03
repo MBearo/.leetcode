@@ -12,15 +12,14 @@
 var simplifyPath = function (path) {
   const arr = path.split('/').filter(v => v)
   const stack = []
-  for (let i = 0; i < arr.length; i++) {
-    const element = arr[i];
+  for (let element of arr) {
     if (element === '..') {
       stack.pop()
     } else if (element !== '.') {
       stack.push(element)
     }
   }
-  return stack.length === 0 ? '/' : stack.reduce((a, c) => a + '/' + c, '')
+  return '/'+stack.join('/')
 };
 // @lc code=end
 

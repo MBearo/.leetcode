@@ -17,8 +17,13 @@
  * @return {boolean}
  */
 // time n space 1
-// 快慢指针找中点，边找边翻转前面的
+// 和下面的方法区别在翻转的时候不是交换，而是修改指向
 var isPalindrome = function (head) {
+  
+}
+// time n space 1
+// 快慢指针找中点，边找边翻转前面的 写了一天，边界判断不清晰
+var isPalindrome3 = function (head) {
   if (head === null || head.next === null) {
     return true
   }
@@ -33,7 +38,7 @@ var isPalindrome = function (head) {
       slow.next = next.next
       next.next = dummy.next
       dummy.next = next
-    }else{
+    } else {
       slow = slow.next
     }
   }
