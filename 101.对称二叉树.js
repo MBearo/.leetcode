@@ -16,6 +16,7 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+// 相当于 100 改了改
 var isSymmetric = function (root) {
   if (root === null) return true
   return check(root.left, root.right)
