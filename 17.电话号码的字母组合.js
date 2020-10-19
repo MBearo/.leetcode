@@ -30,9 +30,10 @@ var letterCombinations = function (digits) {
   function bfs(temp, depth) {
     if (temp.length === arr.length) {
       result.push(temp.join(''))
-      return
+      return // 这个非常需要注意
     }
     for (let i = 0; i < arr[depth].length; i++) {
+      // 如果需要判断重复就需要下面这行，当然时间复杂度也会上来
       // if (temp.includes(arr[depth][i])) {
       //   continue
       // }
