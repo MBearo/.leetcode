@@ -19,7 +19,7 @@ var combine = function (n, k) {
     }
     for (let i = nums; i <= n; i++) {
       arr.push(i)
-      backtrack(arr, i + 1) // 这个 i+1 太妙了，让下面直接从后一个开始
+      backtrack(arr, i + 1) // 这个 i+1 太妙了，让下面直接从后一个开始，直接剪枝了
       arr.pop()
     }
   }
