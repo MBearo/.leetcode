@@ -42,7 +42,7 @@ var minimumTotal2 = function (triangle) {
 
 console.log(minimumTotal([
   [2],
-    [3,4],
-   [6,5,7],
+  [3,4],
+  [6,5,7],
   [4,1,8,3]
 ]));
