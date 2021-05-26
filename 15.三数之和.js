@@ -18,6 +18,8 @@ var threeSum = function (nums) {
   const result = []
   for (let i = 0; i < array.length - 2; i++) {
     const element = array[i];
+    // 指针都在i的右侧，所以如果array[i]>0 那么三数之和肯定不能等于零
+    if (element > 0) break
     if (i > 0 && nums[i] === nums[i - 1]) continue; // 去重
     let m = i + 1
     let n = array.length - 1
