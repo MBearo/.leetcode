@@ -7,6 +7,7 @@
  * @param {number} x
  * @return {boolean}
  */
+// 判断倒转过来的字符串是否相等就行
 var isPalindrome = function (x) {
   let s = "" + x
   let arr=[]

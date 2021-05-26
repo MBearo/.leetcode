@@ -9,6 +9,7 @@
  * @param {string} s
  * @return {number}
  */
+// 两个指针
 var lengthOfLongestSubstring = function (s) {
   let i = 0
   let j = -1
